@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap');
+
+body {margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Noto Sans KR', sans-serif; background: url(img/soju.jpeg) no-repeat center / cover;}
+h1 {margin: 0;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+
+.red-txt {color: red;}
+
+.wrap {width: 1200px; height: 70vh; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background-color: rgba(247, 243, 242, 0.7);  border-radius: 40px; border: 10px solid white; box-sizing: border-box;}
+.title {font-size: 2vw;}
+.title .main {color: blue;}
+#user-input {display: block; margin: 40px auto; padding: 15px 20px; width: 300px; box-sizing: border-box; border-color: transparent; outline: none; border-radius: 20px; font-size: 2vw; text-align: center; font-weight: bold;}
+#user-input:focus {border-color: #000;}
+#result-area {margin: 20px 0 5px; font-size: 2vw;}
+button {background-color: #3C76F1; border: none; color: #fff; padding: 10px 20px; font-size: 2vw; border-radius: 20px; cursor: pointer;}
+button + button {margin-top: 20px;}
+#chance-area {font-size: 2vw;}
+#chance-area .red-txt {font-weight: bold;}
+#reset-button {background-color: green;}
+#play-button:disabled {background-color: red; pointer-events: none;}
+
+@media ( max-width : 1240px ) {
+    .wrap {width: 100%; margin: 0 20px;}
+    #user-input {width: 40%;}
+    
+}
+
+@media ( max-width : 768px ) {
+    .wrap {height: unset;}
+    .title {font-size: 4vw;}
+    #result-area {font-size: 6vw;}
+    #chance-area {font-size: 6vw;}
+    #user-input {font-size: 6vw;}
+    button {font-size: 6vw;}
+}
