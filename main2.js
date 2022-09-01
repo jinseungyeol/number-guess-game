@@ -12,7 +12,7 @@
 
 let randomNum = 0;
 let playButton = document.getElementById("play-button");
-let userInput = document.getElementById("user-input");
+let userInput = document.getElementById("user-input"); // input 에 입력한 값을 반환하면 문자열로 반환된다 ex) 100 , "99" 
 let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset-button");
 let chanceArea = document.getElementById("chance-area");
@@ -49,11 +49,12 @@ function play() {
     }
 
     history.push(userInputVal);
+    let LastHistory = history[history.length -2];
     
     if (userInputVal > randomNum) {
         resultArea.textContent = "Down";
 
-        if (history[history.length -2] < userInputVal && history[history.length -2] > randomNum) {
+        if (LastHistory < parseInt(userInputVal) && LastHistory > randomNum) {
             resultArea.textContent = "이미 입력하신 숫자보다 큽니다.";
             return;
         }
@@ -62,7 +63,7 @@ function play() {
         resultArea.textContent = "Up"; 
         // return;
 
-        if (history[history.length -2] > userInputVal && history[history.length -2] < randomNum) {
+        if (LastHistory > parseInt(userInputVal) && LastHistory < randomNum) {
             resultArea.textContent = "이미 입력하신 숫자보다 작습니다.";
             return;
         }
@@ -84,6 +85,7 @@ function reset() {
     userInput.value = "";
     playButton.disabled = false;
     resultArea.textContent = "1부터 100 사이의 숫자를 입력 해주세요";
-    chanceAreaNum.textContent = `5번`
+    chanceAreaNum.textContent = `5번`;
+    history = [];
 }
 answerNum();
