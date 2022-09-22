@@ -49,22 +49,31 @@ function play() {
     }
 
     history.push(userInputVal);
-    let LastHistory = history[history.length -2];
+    
+    
     
     if (userInputVal > randomNum) {
         resultArea.textContent = "Down";
-        if (LastHistory < parseInt(userInputVal) && LastHistory > randomNum) {
-            resultArea.textContent = "이미 입력하신 숫자보다 큽니다.";
-            return;
+
+        for (let i =0; i < history.length; i++) {
+            console.log(history)
+            if (history[i] < userInputVal && history[i] > randomNum) {
+                resultArea.textContent = "입력하신 숫자보다 커요";
+                return;
+            }
         }
+        
+        
 
     } else if (userInputVal < randomNum) {
         resultArea.textContent = "Up"; 
         // return;
 
-        if (LastHistory > parseInt(userInputVal) && LastHistory < randomNum) {
-            resultArea.textContent = "이미 입력하신 숫자보다 작습니다.";
-            return;
+        for (let i =0; i < history.length; i++) {
+            if (history[i] > userInputVal && history[i] < randomNum) {
+                resultArea.textContent = "입력하신 숫자보다 작아요";
+                return;
+            }
         }
 
     } else {
