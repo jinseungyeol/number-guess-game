@@ -24,7 +24,7 @@ button + button {margin-top: 20px;}
 
 @media ( max-width : 1240px ) {
     .wrap {width: 100%; margin: 0 20px;}
-    #user-input {width: 40%;}
+    #user-input {width: 60%;}
 }
 
 @media ( max-width : 768px ) {
