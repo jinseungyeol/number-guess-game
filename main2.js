@@ -53,7 +53,6 @@ function play() {
     
     if (userInputVal > randomNum) {
         resultArea.textContent = "Down";
-
         if (LastHistory < parseInt(userInputVal) && LastHistory > randomNum) {
             resultArea.textContent = "이미 입력하신 숫자보다 큽니다.";
             return;
@@ -73,7 +72,7 @@ function play() {
         playButton.disabled = true;
     }
     chanceNum--;
-    chanceAreaNum.textContent = `${chanceNum}번`
+    chanceAreaNum.textContent = `${chanceNum}번`;
 
     if (chanceNum < 1) {
         playButton.disabled = true;
@@ -82,10 +81,12 @@ function play() {
 }
 
 function reset() {
+    answerNum();
     userInput.value = "";
     playButton.disabled = false;
     resultArea.textContent = "1부터 100 사이의 숫자를 입력 해주세요";
-    chanceAreaNum.textContent = `5번`;
+    chanceNum = 5;
+    chanceAreaNum.textContent = `${chanceNum}번`;
     history = [];
 }
 answerNum();
