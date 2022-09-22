@@ -56,7 +56,6 @@ function play() {
         resultArea.textContent = "Down";
 
         for (let i =0; i < history.length; i++) {
-            console.log(history)
             if (history[i] < userInputVal && history[i] > randomNum) {
                 resultArea.textContent = "입력하신 숫자보다 커요";
                 return;
