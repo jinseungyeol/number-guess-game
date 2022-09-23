@@ -27,7 +27,7 @@ userInput.addEventListener("focus", function() {
 })
 
 function answerNum() {
-    randomNum = (Math.floor(Math.random() * 100)) + 1;
+    randomNum = (Math.floor(Math.random() * 50)) + 1;
     console.log(`정답 : ${randomNum}`);
 }
 
@@ -38,7 +38,7 @@ function play() {
 
     let userInputVal = parseInt(userInput.value);
 
-    if (userInputVal < 1 || userInputVal > 100) {
+    if (userInputVal < 1 || userInputVal > 50) {
         resultArea.textContent = "범위밖입니다";
         return;
     }
@@ -90,7 +90,7 @@ function reset() {
     answerNum();
     userInput.value = "";
     playButton.disabled = false;
-    resultArea.textContent = "1부터 100 사이의 숫자를 입력 해주세요";
+    resultArea.textContent = "1부터 50 사이의 숫자를 입력 해주세요";
     chanceNum = 5;
     chanceAreaNum.textContent = `${chanceNum}번`;
     history = [];
