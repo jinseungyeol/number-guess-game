@@ -82,6 +82,7 @@ function play() {
 
     if (chanceNum < 1) {
         playButton.disabled = true;
+        resultArea.textContent = "운도 지지리도 없는새끼 ㅋㅋ";
         return;
     }
 }
