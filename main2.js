@@ -32,11 +32,11 @@ function answerNum() {
 }
 
 function play() {
-    let userInputVal = userInput.value;
-
-    if (userInputVal == "") {
+    if (userInput.value == "") {
         return;
     }
+
+    let userInputVal = parseInt(userInput.value);
 
     if (userInputVal < 1 || userInputVal > 100) {
         resultArea.textContent = "범위밖입니다";
@@ -49,15 +49,13 @@ function play() {
     }
 
     history.push(userInputVal);
-    
-    
-    
     if (userInputVal > randomNum) {
         resultArea.textContent = "Down";
 
         for (let i =0; i < history.length; i++) {
             if (history[i] < userInputVal && history[i] > randomNum) {
                 resultArea.textContent = "입력하신 숫자보다 커요";
+                history.pop();
                 return;
             }
         }
@@ -66,11 +64,11 @@ function play() {
 
     } else if (userInputVal < randomNum) {
         resultArea.textContent = "Up"; 
-        // return;
 
         for (let i =0; i < history.length; i++) {
             if (history[i] > userInputVal && history[i] < randomNum) {
                 resultArea.textContent = "입력하신 숫자보다 작아요";
+                history.pop();
                 return;
             }
         }
