@@ -39,12 +39,12 @@ function play() {
     let userInputVal = parseInt(userInput.value);
 
     if (userInputVal < 1 || userInputVal > 50) {
-        resultArea.textContent = "범위밖입니다";
+        resultArea.textContent = "숫자범위도 모르는 빡대가리새끼";
         return;
     }
 
     if (history.includes(userInputVal)) {
-        resultArea.textContent = "이미 입력했던 숫자입니다.";
+        resultArea.textContent = "방금 입력했다고 미친련아";
         return;
     }
 
@@ -54,7 +54,7 @@ function play() {
 
         for (let i =0; i < history.length; i++) {
             if (history[i] < userInputVal && history[i] > randomNum) {
-                resultArea.textContent = "입력하신 숫자보다 커요";
+                resultArea.textContent = "Down 이라고 병신아";
                 history.pop();
                 return;
             }
@@ -67,14 +67,14 @@ function play() {
 
         for (let i =0; i < history.length; i++) {
             if (history[i] > userInputVal && history[i] < randomNum) {
-                resultArea.textContent = "입력하신 숫자보다 작아요";
+                resultArea.textContent = "Up 이라고 병신아";
                 history.pop();
                 return;
             }
         }
 
     } else {
-        resultArea.textContent = "정답";
+        resultArea.textContent = "정답이다 김당구는 병신";
         playButton.disabled = true;
     }
     chanceNum--;
